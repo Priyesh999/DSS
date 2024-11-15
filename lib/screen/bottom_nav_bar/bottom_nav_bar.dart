@@ -108,7 +108,7 @@ class BottomNavBar extends StatelessWidget {
                                     height: 25,
                                     value: 1,
                                     child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                                      Obx(() => Text("Sumit Kumar",
+                                      Obx(() => Text("Ankita Kumari",
                                           style:
                                               TStyle.f10_R.styleWith(color: Colors.white, fontWeight: FontWeight.bold)))
                                     ])),
@@ -143,7 +143,7 @@ class BottomNavBar extends StatelessWidget {
                                   } catch (e) {
                                     final prefs = await SharedPreferences.getInstance();
                                     prefHandler.setLogIn(false);
-                                    Get.offAllNamed(Routes.LOGIN);
+                                    // Get.offAllNamed(Routes.LOGIN);
                                   }
                                 },
                               );

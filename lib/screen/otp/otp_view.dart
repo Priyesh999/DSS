@@ -256,7 +256,8 @@ Widget signInButton(size) {
       // controller.loginUserTA();
       // Get.toNamed(Routes.OTP);
 
-      Get.offAllNamed(Routes.BOTTOM_NAVIGATION);
+      // Get.offAllNamed(Routes.BOTTOM_NAVIGATION);
+      Get.offAllNamed(Routes.DASHBOARD);
     },
     child: Container(
       alignment: Alignment.center,

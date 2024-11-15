@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../screen/admin/adminbinding.dart';
+import '../screen/admin/adminview.dart';
 import '../screen/bottom_nav_bar/bottom_nav_bar.dart';
 import '../screen/bottom_nav_bar/bottom_nav_bar_binding.dart';
 import '../screen/login/login_binding.dart';
@@ -48,6 +50,12 @@ class AppPages {
       name: _Paths.BOTTOM_NAVIGATION,
       page: () => BottomNavBar(),
       binding: BottomNavBarBinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => DashboardPage(),
+      binding: Adminbinding(),
       transition: Transition.fadeIn,
     ),
   ];
