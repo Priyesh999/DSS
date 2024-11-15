@@ -8,6 +8,8 @@ abstract class Routes {
   static const REGISTER = _Paths.REGISTER;
   static const BOTTOM_NAVIGATION = _Paths.BOTTOM_NAVIGATION;
   static const DASHBOARD = _Paths.DASHBOARD;
+  static const PRODUCT = _Paths.PRODUCT;
+  static const ADDPRODUCT = _Paths.ADDPRODUCT;
 
 }
 
@@ -18,5 +20,8 @@ abstract class _Paths {
   static const OTP = '/otp';
   static const REGISTER = '/register';
   static const DASHBOARD = '/dashboard_admin';
+  static const PRODUCT = '/product';
+  static const ADDPRODUCT = '/add_product';
+
 
 }

@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
+import '../controller/apps/ecommerce/product/addProduct/add_product_binding.dart';
+import '../controller/apps/ecommerce/product/addProduct/addproduct_view.dart';
+import '../controller/apps/ecommerce/product/productbinding.dart';
+import '../controller/apps/ecommerce/product/products.dart';
 import '../screen/admin/adminbinding.dart';
 import '../screen/admin/adminview.dart';
 import '../screen/bottom_nav_bar/bottom_nav_bar.dart';
@@ -56,6 +60,18 @@ class AppPages {
       name: _Paths.DASHBOARD,
       page: () => DashboardPage(),
       binding: Adminbinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name:_Paths.PRODUCT,
+      page: ()=> ProductPage(),
+      binding: Productbinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name:_Paths.ADDPRODUCT,
+      page: ()=> AddProduct(),
+      binding: AddProductBinding(),
       transition: Transition.fadeIn,
     ),
   ];

@@ -3,6 +3,7 @@ import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
+import '../../app_route/app_pages.dart';
 import '../../cbt_helper/services/url_service.dart';
 import '../../cbt_helper/theme/app_theme.dart';
 import '../../cbt_helper/theme/theme_customizer.dart';
@@ -77,7 +78,7 @@ class _LeftBarState extends State<LeftBar>
                 children: [
                   InkWell(
                       onTap: () {
-                        Get.toNamed('/dashboard');
+                        Get.toNamed(Routes.DASHBOARD);
                       },
                       child: Image.asset(
                         Images.logoIcon,
@@ -116,7 +117,7 @@ class _LeftBarState extends State<LeftBar>
                     iconData: LucideIcons.layoutDashboard,
                     title: "dashboard",
                     isCondensed: isCondensed,
-                    route: '/dashboard',
+                    route: Routes.DASHBOARD,
                   ),
                   labelWidget("apps"),
 
@@ -183,10 +184,16 @@ class _LeftBarState extends State<LeftBar>
                     isCondensed: isCondensed,
                     title: "Device",
                     children: [
+                      // MenuItem(
+                      //   title: "products",
+                      //   isCondensed: isCondensed,
+                      //   // route: '/apps/ecommerce/products',
+                      //   Get.toNamed(Routes.PRODUCT),
+                      // ),
                       MenuItem(
-                        title: "products",
-                        isCondensed: isCondensed,
-                        route: '/apps/ecommerce/products',
+                        title: "Products",
+                        isCondensed: true,
+                        route: Routes.PRODUCT,
                       ),
                       MenuItem(
                         title: "add_product",
@@ -510,49 +517,54 @@ class MenuItem extends StatefulWidget {
   _MenuItemState createState() => _MenuItemState();
 }
 
-class _MenuItemState extends State<MenuItem> with UIMixin {
+class _MenuItemState extends State<MenuItem> {
   bool isHover = false;
 
   @override
   Widget build(BuildContext context) {
-    bool isActive = UrlService.getCurrentUrl() == widget.route;
-    return GestureDetector(
-      onTap: () {
-        if (widget.route != null) {
-          Get.toNamed(widget.route!);
-
-          // MyRouter.pushReplacementNamed(context, widget.route!, arguments: 1);
-        }
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onHover: (event) {
+        setState(() {
+          isHover = true;
+        });
       },
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        onHover: (event) {
-          setState(() {
-            isHover = true;
-          });
+      onExit: (event) {
+        setState(() {
+          isHover = false;
+        });
+      },
+      child: GestureDetector(
+        onTap: () {
+          if (widget.route != null) {
+            Get.toNamed(widget.route!); // Navigate to the specified route
+          }
         },
-        onExit: (event) {
-          setState(() {
-            isHover = false;
-          });
-        },
-        child: MyContainer.transparent(
-          margin: MySpacing.fromLTRB(4, 0, 8, 4),
-          color: isActive || isHover
-              ? leftBarTheme.activeItemBackground
-              : Colors.transparent,
-          width: MediaQuery.of(context).size.width,
-          padding: MySpacing.xy(18, 7),
-          child: MyText.bodySmall(
-            "${widget.isCondensed ? "" : "- "}  ${widget.title}",
-            overflow: TextOverflow.clip,
-            maxLines: 1,
-            textAlign: TextAlign.left,
-            fontSize: 12.5,
-            color: isActive || isHover
-                ? leftBarTheme.activeItemColor
-                : leftBarTheme.onBackground,
-            fontWeight: isActive || isHover ? 600 : 500,
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+          decoration: BoxDecoration(
+            color: isHover ? Colors.grey[200] : Colors.transparent,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Row(
+            children: [
+              if (widget.iconData != null)
+                Icon(
+                  widget.iconData,
+                  size: 20,
+                  color: isHover ? Colors.blue : Colors.black,
+                ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  widget.title,
+                  style: TextStyle(
+                    color: isHover ? Colors.blue : Colors.black,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
