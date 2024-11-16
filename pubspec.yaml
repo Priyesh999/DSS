@@ -58,6 +58,7 @@ dependencies:
   tab_container: ^3.5.3
   curved_navigation_bar: ^1.0.6
   google_maps_flutter: ^2.2.8
+  image_picker: ^1.0.0
 #  svg_icon: ^0.0.1
 
 dev_dependencies:

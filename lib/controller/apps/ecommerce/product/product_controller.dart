@@ -10,7 +10,6 @@ import '../../../../model/product.dart';
 import '../../../my_controller.dart';
 
 
-
 class ProductController extends MyController {
   List<Product> products = [];
   DataTableSource? data;

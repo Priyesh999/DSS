@@ -143,7 +143,7 @@ class _LeftBarState extends State<LeftBar>
                     children: [
                       MenuItem(
                         title: "Members",
-                        route: '/contacts/members',
+                        route: Routes.MEMBERLIST,
                         isCondensed: widget.isCondensed,
                       ),
                       // MenuItem(
@@ -153,7 +153,7 @@ class _LeftBarState extends State<LeftBar>
                       // ),
                       MenuItem(
                         title: "Edit Profile",
-                        route: '/contacts/edit-profile',
+                        route: Routes.EDITPROFILE,
                         isCondensed: widget.isCondensed,
                       ),
                     ],
@@ -167,7 +167,7 @@ class _LeftBarState extends State<LeftBar>
                     children: [
                       MenuItem(
                         title: "Contacts",
-                        route: '/crm/contacts',
+                        route: Routes.CONTACT,
                         isCondensed: widget.isCondensed,
                       ),
                       // MenuItem(
@@ -198,7 +198,7 @@ class _LeftBarState extends State<LeftBar>
                       MenuItem(
                         title: "add_product",
                         isCondensed: isCondensed,
-                        route: '/apps/ecommerce/add_product',
+                        route: Routes.ADDPRODUCT,
                       ),
                       MenuItem(
                         title: "product_detail",

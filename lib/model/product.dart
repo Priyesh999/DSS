@@ -25,7 +25,8 @@ class Product extends IdentifierModel {
       this.stock,
       this.ordersCount,
       this.ratingCount,
-      this.createdAt);
+      this.createdAt
+      );
 
   static Product fromJSON(Map<String, dynamic> json) {
     JSONDecoder decoder = JSONDecoder(json);

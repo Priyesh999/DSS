@@ -1,9 +1,15 @@
 import 'package:get/get.dart';
 
+import '../controller/apps/contacts/contact_binding.dart';
+import '../controller/apps/contacts/contact_view.dart';
 import '../controller/apps/ecommerce/product/addProduct/add_product_binding.dart';
 import '../controller/apps/ecommerce/product/addProduct/addproduct_view.dart';
 import '../controller/apps/ecommerce/product/productbinding.dart';
 import '../controller/apps/ecommerce/product/products.dart';
+import '../controller/apps/editprofile/edit_profile.dart';
+import '../controller/apps/editprofile/edit_profile_bindings.dart';
+import '../controller/apps/members/member_list.dart';
+import '../controller/apps/members/member_list_binding.dart';
 import '../screen/admin/adminbinding.dart';
 import '../screen/admin/adminview.dart';
 import '../screen/bottom_nav_bar/bottom_nav_bar.dart';
@@ -72,6 +78,24 @@ class AppPages {
       name:_Paths.ADDPRODUCT,
       page: ()=> AddProduct(),
       binding: AddProductBinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name:_Paths.CONTACT,
+      page: ()=> ContactsPage(),
+      binding: ContactBinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name:_Paths.MEMBERLIST,
+      page: ()=> MemberList(),
+      binding: MemberListBinding(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name:_Paths.EDITPROFILE,
+      page: ()=> EditProfile(),
+      binding: EditProfileBindings(),
       transition: Transition.fadeIn,
     ),
   ];

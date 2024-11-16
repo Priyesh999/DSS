@@ -10,6 +10,9 @@ abstract class Routes {
   static const DASHBOARD = _Paths.DASHBOARD;
   static const PRODUCT = _Paths.PRODUCT;
   static const ADDPRODUCT = _Paths.ADDPRODUCT;
+  static const CONTACT = _Paths.CONTACT;
+  static const MEMBERLIST = _Paths.MEMBERLIST;
+  static const EDITPROFILE = _Paths.EDITPROFILE;
 
 }
 
@@ -22,6 +25,9 @@ abstract class _Paths {
   static const DASHBOARD = '/dashboard_admin';
   static const PRODUCT = '/product';
   static const ADDPRODUCT = '/add_product';
+  static const CONTACT = '/contact';
+  static const MEMBERLIST = '/memberlist';
+  static const EDITPROFILE = '/editprofile';
 
 
 }
